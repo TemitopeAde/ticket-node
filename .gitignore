@@ -19,3 +19,7 @@ pids/
 # Application-specific files
 public/uploads/
 dist/
+
+
+# Environment files
+.env

@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+require('dotenv').config();
+
 
 const app = express();
 const port = 3000;
@@ -8,7 +10,9 @@ const port = 3000;
 app.use(cors());
 app.use(express.json());
 
-const mongoUri = 'mongodb+srv://hellenmara1212:Temade123@cluster0.v03ddg2.mongodb.net/items';
+const mongoUri = process.env.MONGO_URL;
+console.log(mongoUri);
+// const mongoUri = 'mongodb+srv://hellenmara1212:Temade123@cluster0.v03ddg2.mongodb.net/items';
 
 mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true });
 
